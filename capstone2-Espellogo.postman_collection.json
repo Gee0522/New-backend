@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "c53ce033-6939-4f26-afdc-4850e8f6ed26",
+		"name": "capstone2-Espellogo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20763614"
+	},
+	"item": [
+		{
+			"name": "User folder",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Mark Ramos\",\r\n    \"email\": \"mark@mail.com\",\r\n    \"password\": \"mark1235\",\r\n    \"mobileNo\": 123283479\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User log-in",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmFhNTI2YjZiMzUyNmUyZWVlYmQ5YiIsImVtYWlsIjoiam9obkBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTY1NjA3NzB9.2zZ62-3K91yf6N0sGByA161qETWM4TKp83Nqi0vnglg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jane@mail.com\",\r\n    \"password\": \"jane12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set User as admin(admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Njk4OTUyOH0.EecA0ZPZ-vr7bnptzNjWcIiZ5UfnVVghixXWm1lq9ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/62c0e125a683cc02e356f1dd\n/setUserAsAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"62c0e125a683cc02e356f1dd\n",
+								"setUserAsAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve all orders(admin)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzE1NzE0M30.JonVjYIne8YoEg7RxRLp3QR-VhEja3hskdcOEQ1u0E0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"62bfa6f37e9c5c475917dcd3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products folder",
+			"item": [
+				{
+					"name": "Create a product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Njk4OTUyOH0.EecA0ZPZ-vr7bnptzNjWcIiZ5UfnVVghixXWm1lq9ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Huawei\",\r\n    \"description\": \"Laptop\",\r\n    \"prodPrice\": 33000,\r\n    \"prodQuantity\": 15,\r\n    \"isActive\": false \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/products/prodCreate",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"prodCreate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve all active products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "ac",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve single product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/products/62c39ad543f75fb9e9c2547b",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"62c39ad543f75fb9e9c2547b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product information (Admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Njk4OTUyOH0.EecA0ZPZ-vr7bnptzNjWcIiZ5UfnVVghixXWm1lq9ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Huawei\",\r\n    \"description\": \"laptop, tablet\",\r\n    \"prodPrice\": 5000,\r\n    \"prodQuantity\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/products/62c3b5629eb0aba1e7ae3b2a",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"62c3b5629eb0aba1e7ae3b2a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Archive Product (Admin only)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Njk4OTUyOH0.EecA0ZPZ-vr7bnptzNjWcIiZ5UfnVVghixXWm1lq9ro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/products/62c39ad543f75fb9e9c2547b/archive",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"62c39ad543f75fb9e9c2547b",
+								"archive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Non-admin User checkout (Create Order - Customer)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzE0NjE1NX0.CEc8SbPyEXGy3F3cm7SnUBvlyexLkktKRM_fvwdEbrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzBlNjk4ZWYwOTE3MDkxNDgxMWE2NSIsImVtYWlsIjoibWFya0BtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTcxNDAyMzR9.cQ0PhvatKOfstbKUGDNGDp5hKallokhI4B2gCPQhB8E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productId\": \"62c3b5629eb0aba1e7ae3b2a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/checkout",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve authenticated user’s orders (Customer)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYzBlMTI1YTY4M2NjMDJlMzU2ZjFkZCIsImVtYWlsIjoiamFuZUBtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NTcxNTg3MDJ9.ADZLfHWuieoHycrhhNy-EJDBH9aF2mUieXdywU3v44g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYmZhNmYzN2U5YzVjNDc1OTE3ZGNkMyIsImVtYWlsIjoiamFja0BtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NzE1ODQ1NH0.g4H3J9eaB_BdjHygIOAsBeqCw1RpcO8sz2ZYOw-2HUg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"62c0e125a683cc02e356f1dd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/users/myorders",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users",
+								"myorders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

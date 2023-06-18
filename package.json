@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "font-awesome": "^4.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "name": "e-commerce-api-mvp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/batch_1834/s2-git_basics/capstone2-espellogo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/batch_1834/s2-git_basics/capstone2-espellogo/issues"
+  },
+  "homepage": "https://gitlab.com/batch_1834/s2-git_basics/capstone2-espellogo#readme",
+  "description": ""
+}
